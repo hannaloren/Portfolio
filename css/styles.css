@@ -1,0 +1,1265 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=Playfair+Display:wght@500;600;700&family=DM+Mono:wght@400;500&display=swap');
+
+:root{
+    --bg:#fcfaf8;
+    --surface:#ffffff;
+    --surface-2:#f7f3f0;
+    --primary:#b85c72;
+    --primary-dark:#964559;
+    --primary-light:#f5e8ec;
+    --text:#1f1f1f;
+    --text-light:#666666;
+    --border:#ece5df;
+    --shadow:0 12px 40px rgba(0,0,0,.06);
+    --shadow-hover:0 22px 60px rgba(0,0,0,.10);
+    --radius:26px;
+    --transition:.35s ease;
+    --heading:"Playfair Display",serif;
+    --body:"DM Sans",sans-serif;
+    --mono:"DM Mono",monospace;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--body);
+    overflow-x:hidden;
+    line-height:1.7;
+}
+
+img{
+    display:block;
+    width:100%;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+ul{
+    list-style:none;
+}
+
+.container{
+    width:min(1220px,calc(100% - 80px));
+    margin:auto;
+}
+
+section{
+    padding:120px 0;
+}
+
+.section-title{
+    margin-bottom:75px;
+}
+
+.section-title span{
+    display:inline-block;
+    font-family:var(--mono);
+    letter-spacing:5px;
+    font-size:.8rem;
+    text-transform:uppercase;
+    color:var(--primary);
+    margin-bottom:18px;
+}
+
+.section-title h2{
+    font-family:var(--heading);
+    font-size:3.4rem;
+    font-weight:600;
+    line-height:1.15;
+    max-width:760px;
+}
+
+p{
+    color:var(--text-light);
+    font-size:1.05rem;
+    line-height:2;
+}
+
+/*=========================
+HEADER
+=========================*/
+
+.header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:999;
+    background:rgba(252,250,248,.75);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(232,227,221,.7);
+}
+
+.nav-container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    height:86px;
+}
+
+.logo{
+    font-family:var(--heading);
+    font-size:2rem;
+    font-weight:700;
+    transition:var(--transition);
+}
+
+.logo span{
+    color:var(--primary);
+}
+
+.logo:hover{
+    transform:translateY(-2px);
+}
+
+.nav-menu{
+    display:flex;
+    align-items:center;
+    gap:42px;
+}
+
+.nav-menu a{
+    position:relative;
+    font-size:.95rem;
+    font-weight:500;
+    color:var(--text-light);
+    transition:var(--transition);
+}
+
+.nav-menu a::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    bottom:-10px;
+    transform:translateX(-50%);
+    width:0;
+    height:2px;
+    border-radius:50px;
+    background:var(--primary);
+    transition:.3s;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active{
+    color:var(--primary);
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after{
+    width:100%;
+}
+
+.hamburger{
+    display:none;
+    background:none;
+    border:none;
+    cursor:pointer;
+    flex-direction:column;
+    gap:6px;
+}
+
+.hamburger span{
+    width:28px;
+    height:3px;
+    background:var(--text);
+    border-radius:30px;
+    transition:.35s;
+}
+
+.hamburger.active span:nth-child(1){
+    transform:translateY(9px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2){
+    opacity:0;
+}
+
+.hamburger.active span:nth-child(3){
+    transform:translateY(-9px) rotate(-45deg);
+}
+
+/*=========================
+HERO
+=========================*/
+
+#hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    position:relative;
+    overflow:hidden;
+    padding-top:150px;
+}
+
+#hero::before{
+    content:"";
+    position:absolute;
+    width:600px;
+    height:600px;
+    background:radial-gradient(circle,var(--primary-light),transparent 70%);
+    top:-250px;
+    right:-200px;
+    opacity:.8;
+    pointer-events:none;
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:90px;
+    align-items:center;
+}
+
+.hero-subtitle{
+    display:inline-block;
+    font-family:var(--mono);
+    letter-spacing:5px;
+    font-size:.85rem;
+    color:var(--primary);
+    margin-bottom:22px;
+}
+
+.hero-content h1{
+    font-family:var(--heading);
+    font-size:5rem;
+    line-height:1.05;
+    margin-bottom:30px;
+    max-width:720px;
+}
+
+.hero-content h1 span{
+    color:var(--primary);
+}
+
+.hero-description{
+    max-width:610px;
+    margin-bottom:45px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:18px;
+    margin-bottom:45px;
+}
+
+.primary-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:18px 38px;
+    border-radius:999px;
+    background:var(--primary);
+    color:#fff;
+    font-weight:600;
+    transition:var(--transition);
+    box-shadow:0 10px 30px rgba(184,92,114,.25);
+}
+
+.primary-btn:hover{
+    background:var(--primary-dark);
+    transform:translateY(-5px);
+}
+
+.secondary-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:18px 38px;
+    border-radius:999px;
+    background:#fff;
+    border:1px solid var(--border);
+    transition:var(--transition);
+}
+
+.secondary-btn:hover{
+    background:var(--surface-2);
+    transform:translateY(-5px);
+}
+
+.social-links{
+    display:flex;
+    gap:18px;
+}
+
+.social-links a{
+    width:56px;
+    height:56px;
+    border-radius:50%;
+    background:#fff;
+    border:1px solid var(--border);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.15rem;
+    transition:var(--transition);
+    box-shadow:var(--shadow);
+}
+
+.social-links a:hover{
+    background:var(--primary);
+    color:#fff;
+    transform:translateY(-6px);
+}
+
+.hero-image{
+    display:flex;
+    justify-content:center;
+}
+
+.image-wrapper{
+    width:100%;
+    max-width:470px;
+    aspect-ratio:4/5;
+    border-radius:40px;
+    overflow:hidden;
+    background:#fff;
+    border:1px solid var(--border);
+    box-shadow:0 30px 80px rgba(0,0,0,.08);
+    transition:var(--transition);
+}
+
+.image-wrapper:hover{
+    transform:translateY(-8px);
+}
+
+.image-wrapper img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center top;
+}
+
+/*=========================
+ABOUT
+=========================*/
+
+#about{
+    background:var(--surface);
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:80px;
+    align-items:start;
+}
+
+.about-text{
+    display:flex;
+    flex-direction:column;
+}
+
+.about-text p{
+    text-align:justify;
+    text-indent:2rem;
+    margin-bottom:28px;
+}
+
+.about-card{
+    display:flex;
+    align-items:flex-start;
+    gap:22px;
+    padding:32px;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    margin-bottom:22px;
+    transition:var(--transition);
+    box-shadow:var(--shadow);
+}
+
+.about-card:hover{
+    transform:translateY(-8px);
+    box-shadow:var(--shadow-hover);
+}
+
+.about-card i{
+    width:62px;
+    height:62px;
+    border-radius:18px;
+    background:var(--primary-light);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--primary);
+    font-size:1.3rem;
+    flex-shrink:0;
+}
+
+.about-card h3{
+    font-family:var(--heading);
+    font-size:1.45rem;
+    margin-bottom:10px;
+}
+
+.about-card p{
+    font-size:.98rem;
+}
+
+/*=========================
+TABLET
+=========================*/
+
+@media(max-width:1100px){
+
+.hero-grid,
+.about-grid{
+grid-template-columns:1fr;
+gap:60px;
+}
+
+.hero-image{
+order:1;
+}
+
+.hero-content{
+order:2;
+}
+
+.image-wrapper{
+margin:auto;
+}
+
+}
+
+/*=========================
+MOBILE
+=========================*/
+
+@media(max-width:768px){
+
+.container{
+width:min(100%,calc(100% - 40px));
+}
+
+section{
+padding:90px 0;
+}
+
+.section-title{
+margin-bottom:55px;
+}
+
+.section-title h2{
+font-size:2.4rem;
+}
+
+.hero-grid{
+text-align:center;
+gap:50px;
+}
+
+.hero-content h1{
+font-size:3.4rem;
+}
+
+.hero-buttons{
+flex-direction:column;
+}
+
+.social-links{
+justify-content:center;
+}
+
+.image-wrapper{
+max-width:340px;
+}
+
+.about-grid{
+grid-template-columns:1fr;
+}
+
+.about-card{
+display:none;
+}
+
+.navbar{
+position:absolute;
+top:86px;
+left:0;
+width:100%;
+background:#fff;
+border-top:1px solid var(--border);
+max-height:0;
+overflow:hidden;
+transition:.35s;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.navbar.active{
+max-height:450px;
+}
+
+.nav-menu{
+flex-direction:column;
+gap:28px;
+padding:30px 0;
+}
+
+.hamburger{
+display:flex;
+}
+
+}
+
+@media(max-width:480px){
+
+.hero-content h1{
+font-size:2.8rem;
+}
+
+.section-title h2{
+font-size:2rem;
+}
+
+.image-wrapper{
+max-width:300px;
+}
+
+.primary-btn,
+.secondary-btn{
+width:100%;
+}
+
+}
+/*=========================
+SKILLS SECTION
+Displays skill categories in responsive cards.
+Each card highlights a group of related skills.
+=========================*/
+
+#skills{
+    background:var(--bg);
+}
+
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
+}
+
+/* Individual skill category card */
+
+.skill-box{
+    padding:40px;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    transition:var(--transition);
+}
+
+/* Lifts the card when hovered */
+
+.skill-box:hover{
+    transform:translateY(-8px);
+    box-shadow:var(--shadow-hover);
+}
+
+.skill-box h3{
+    font-family:var(--heading);
+    font-size:1.7rem;
+    margin-bottom:22px;
+}
+
+/* Displays skills vertically */
+
+.skill-box ul{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+}
+
+/* Individual skill */
+
+.skill-box li{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    color:var(--text-light);
+    font-size:1rem;
+}
+
+/* Decorative bullet before every skill */
+
+.skill-box li::before{
+    content:"";
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    background:var(--primary);
+}
+
+/*=========================
+JOURNEY / EDUCATION
+Vertical timeline showing educational
+and learning milestones.
+=========================*/
+
+#journey{
+    background:var(--surface);
+}
+
+/* Main timeline wrapper */
+
+.timeline{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    gap:35px;
+    padding-left:45px;
+}
+
+/* Vertical timeline line */
+
+.timeline::before{
+    content:"";
+    position:absolute;
+    left:36px;
+    top:0;
+    bottom:0;
+    width:2px;
+    background:var(--border);
+}
+
+/* One timeline event */
+
+.timeline-item{
+    display:grid;
+    grid-template-columns:90px 1fr;
+    gap:40px;
+    align-items:center;
+}
+
+/* Circular year indicator */
+
+.year{
+    width:74px;
+    height:74px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:50%;
+    background:#fff;
+    border:2px solid var(--primary);
+    color:var(--primary);
+    font-family:var(--mono);
+    font-weight:700;
+    z-index:2;
+}
+
+/* Information card beside the year */
+
+.timeline-content{
+    padding:35px;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    transition:var(--transition);
+}
+
+/* Floating effect on hover */
+
+.timeline-content:hover{
+    transform:translateY(-8px);
+    box-shadow:var(--shadow-hover);
+}
+
+.timeline-content h3{
+    font-family:var(--heading);
+    font-size:1.6rem;
+    margin-bottom:14px;
+}
+
+/*=========================
+PROJECTS SECTION
+Displays portfolio projects in
+large feature cards.
+=========================*/
+
+#projects{
+    background:var(--bg);
+}
+
+/* Main project card */
+
+.project-card{
+    display:grid;
+    grid-template-columns:430px 1fr;
+    gap:60px;
+    align-items:center;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:30px;
+    padding:40px;
+    margin-bottom:40px;
+    box-shadow:var(--shadow);
+    transition:var(--transition);
+}
+
+/* Card hover animation */
+
+.project-card:hover{
+    transform:translateY(-8px);
+    box-shadow:var(--shadow-hover);
+}
+
+/* Holds the project preview image */
+
+.project-image{
+    overflow:hidden;
+    border-radius:22px;
+}
+
+/* Smooth zoom animation */
+
+.project-image img{
+    transition:.5s;
+}
+
+/* Zooms image when card is hovered */
+
+.project-card:hover .project-image img{
+    transform:scale(1.06);
+}
+
+/* Decorative project number */
+
+.project-number{
+    display:inline-block;
+    font-family:var(--mono);
+    letter-spacing:4px;
+    color:var(--primary);
+    margin-bottom:14px;
+}
+
+.project-info h3{
+    font-family:var(--heading);
+    font-size:2.2rem;
+    margin-bottom:20px;
+}
+
+.project-info p{
+    margin-bottom:25px;
+}
+
+/* Technology badges */
+
+.tech-stack{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+    margin-bottom:30px;
+}
+
+/* Individual technology tag */
+
+.tech-stack span{
+    padding:11px 18px;
+    background:var(--primary-light);
+    color:var(--primary);
+    border-radius:999px;
+    font-size:.9rem;
+    font-weight:500;
+}
+
+/* GitHub button container */
+
+.project-links{
+    display:flex;
+    gap:18px;
+}
+
+/* GitHub button */
+
+.project-links a{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    padding:15px 28px;
+    border-radius:999px;
+    border:1px solid var(--border);
+    background:#fff;
+    transition:var(--transition);
+}
+
+/* Button hover effect */
+
+.project-links a:hover{
+    background:var(--primary);
+    border-color:var(--primary);
+    color:#fff;
+}
+
+/*=========================
+TABLET RESPONSIVE
+Adjusts layouts for tablets.
+=========================*/
+
+@media(max-width:1100px){
+
+    .skills-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .project-card{
+        grid-template-columns:1fr;
+        gap:40px;
+    }
+
+    .project-image{
+        max-width:700px;
+        margin:auto;
+    }
+
+}
+
+/*=========================
+MOBILE RESPONSIVE
+Stacks cards and simplifies layouts.
+=========================*/
+
+@media(max-width:768px){
+
+    .skills-grid{
+        grid-template-columns:1fr;
+    }
+
+    .timeline{
+        padding-left:0;
+    }
+
+    /* Removes vertical timeline line */
+
+    .timeline::before{
+        display:none;
+    }
+
+    .timeline-item{
+        grid-template-columns:1fr;
+        gap:20px;
+    }
+
+    .year{
+        margin:auto;
+    }
+
+    .timeline-content{
+        text-align:center;
+    }
+
+    .project-card{
+        grid-template-columns:1fr;
+        padding:28px;
+    }
+
+    .project-info{
+        text-align:center;
+    }
+
+    .tech-stack{
+        justify-content:center;
+    }
+
+    .project-links{
+        flex-direction:column;
+    }
+
+    .project-links a{
+        width:100%;
+    }
+
+}
+
+/*=========================
+SMALL MOBILE
+Reduces spacing and font sizes
+for very small devices.
+=========================*/
+
+@media(max-width:480px){
+
+    .skill-box,
+    .timeline-content,
+    .project-card{
+        padding:24px;
+    }
+
+    .project-info h3{
+        font-size:1.8rem;
+    }
+
+    .timeline-content h3{
+        font-size:1.4rem;
+    }
+
+}/*=========================
+STATISTICS SECTION
+Displays portfolio achievements
+using responsive statistic cards.
+=========================*/
+
+#statistics{
+    background:var(--surface);
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:28px;
+}
+
+/* Individual statistic card */
+
+.stat-box{
+    background:#fff;
+    padding:40px 28px;
+    text-align:center;
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    transition:var(--transition);
+}
+
+/* Raises the card on hover */
+
+.stat-box:hover{
+    transform:translateY(-8px);
+    box-shadow:var(--shadow-hover);
+}
+
+/* Large statistic number */
+
+.stat-box h2{
+    font-family:var(--heading);
+    font-size:3.2rem;
+    color:var(--primary);
+    margin-bottom:12px;
+}
+
+/* Statistic description */
+
+.stat-box p{
+    font-size:1rem;
+    color:var(--text-light);
+}
+
+/*=========================
+BEYOND CODING SECTION
+Displays hobbies and personal
+interests in modern cards.
+=========================*/
+
+#beyond{
+    background:var(--bg);
+}
+
+.beyond-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:28px;
+}
+
+/* Individual interest card */
+
+.interest{
+    padding:35px;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    transition:var(--transition);
+}
+
+/* Floating hover animation */
+
+.interest:hover{
+    transform:translateY(-8px);
+    box-shadow:var(--shadow-hover);
+}
+
+.interest h3{
+    font-family:var(--heading);
+    font-size:1.45rem;
+    margin-bottom:18px;
+}
+
+.interest p{
+    color:var(--text-light);
+}
+
+/*=========================
+CONTACT SECTION
+Final call-to-action encouraging
+visitors to connect.
+=========================*/
+
+#contact{
+    background:linear-gradient(180deg,#fcfaf8,#f8f5f2);
+    border-bottom:none;
+}
+
+.contact-section{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+}
+
+/* Small section label */
+
+.section-label{
+    display:inline-block;
+    font-family:var(--mono);
+    letter-spacing:5px;
+    text-transform:uppercase;
+    color:var(--primary);
+    margin-bottom:18px;
+}
+
+.contact-section h2{
+    font-family:var(--heading);
+    font-size:3.3rem;
+    margin-bottom:20px;
+}
+
+.contact-section > p{
+    max-width:650px;
+    margin:0 auto 50px;
+}
+
+/* Contact buttons */
+
+.contact-links{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.contact-links a{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:17px 30px;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:999px;
+    transition:var(--transition);
+    box-shadow:var(--shadow);
+}
+
+/* Button hover effect */
+
+.contact-links a:hover{
+    background:var(--primary);
+    color:#fff;
+    border-color:var(--primary);
+    transform:translateY(-6px);
+}
+
+/*=========================
+FOOTER
+Displays copyright and
+personal branding.
+=========================*/
+
+footer{
+    background:#f3eeea;
+    border-top:1px solid var(--border);
+    padding:80px 0 40px;
+}
+
+.footer-top{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding-bottom:35px;
+}
+
+/* Portfolio name */
+
+.footer-brand h3{
+    font-family:var(--heading);
+    font-size:2.5rem;
+    margin-bottom:12px;
+}
+
+.footer-brand span{
+    color:var(--primary);
+}
+
+.footer-brand p{
+    max-width:420px;
+    margin:auto;
+    color:var(--text-light);
+    line-height:1.9;
+}
+
+.footer-bottom{
+    padding-top:35px;
+    text-align:center;
+    border-top:1px solid var(--border);
+}
+
+.footer-bottom p{
+    font-size:.9rem;
+    color:var(--text-light);
+}
+
+/*=========================
+SCROLLBAR
+Creates a modern custom scrollbar.
+=========================*/
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#f3efec;
+}
+
+::-webkit-scrollbar-thumb{
+    background:var(--primary);
+    border-radius:999px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:var(--primary-dark);
+}
+
+/*=========================
+FOCUS STYLES
+Improves keyboard accessibility.
+=========================*/
+
+a:focus,
+button:focus{
+    outline:2px solid var(--primary);
+    outline-offset:4px;
+}
+
+/*=========================
+TABLET RESPONSIVE
+Adjusts layouts for medium screens.
+=========================*/
+
+@media(max-width:1100px){
+
+    .stats-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .beyond-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+/*=========================
+MOBILE RESPONSIVE
+Stacks sections vertically and
+improves readability.
+=========================*/
+
+@media(max-width:768px){
+
+    .stats-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:18px;
+    }
+
+    .stat-box{
+        padding:25px 15px;
+    }
+
+    .stat-box h2{
+        font-size:2rem;
+    }
+
+    .stat-box p{
+        font-size:.85rem;
+    }
+
+    .beyond-grid{
+        grid-template-columns:1fr;
+    }
+
+    .contact-section h2{
+        font-size:2.4rem;
+    }
+
+    .contact-links{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .contact-links a{
+        width:100%;
+        justify-content:center;
+    }
+
+    footer{
+        padding:60px 0 30px;
+    }
+
+    .footer-brand h3{
+        font-size:2rem;
+    }
+
+    .footer-bottom{
+        margin-top:25px;
+        padding-top:25px;
+    }
+
+}
+
+/*=========================
+SMALL MOBILE
+Optimizes spacing for compact screens.
+=========================*/
+
+@media(max-width:480px){
+
+    .stats-grid{
+        grid-template-columns:1fr;
+    }
+
+    .stat-box{
+        padding:22px;
+    }
+
+    .interest{
+        padding:26px;
+    }
+
+    .contact-section h2{
+        font-size:2rem;
+    }
+
+    .footer-brand h3{
+        font-size:1.7rem;
+    }
+
+    .footer-brand p,
+    .footer-bottom p{
+        font-size:.85rem;
+    }
+
+}
