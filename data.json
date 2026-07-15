@@ -1,0 +1,169 @@
+{
+    "aboutCards": [
+        {
+            "icon": "fa-solid fa-lightbulb",
+            "title": "Curiosity",
+            "description": "I constantly explore new technologies, ideas, and perspectives because learning never truly stops."
+        },
+        {
+            "icon": "fa-solid fa-heart",
+            "title": "Passion",
+            "description": "Every project is another opportunity to create something meaningful while becoming a better developer."
+        },
+        {
+            "icon": "fa-solid fa-seedling",
+            "title": "Growth",
+            "description": "I am continuously expanding my skills to become a better developer and problem solver."
+        }
+    ],
+    "skills": [
+        {
+            "title": "Frontend",
+            "items": [
+                "HTML5",
+                "CSS",
+                "JavaScript",
+                "Responsive Design"
+            ]
+        },
+        {
+            "title": "Programming",
+            "items": [
+                "Java",
+                "JavaScript"
+            ]
+        },
+        {
+            "title": "Design",
+            "items": [
+                "Figma",
+                "Canva",
+                "Wireframing",
+                "UI Design"
+            ]
+        },
+        {
+            "title": "Tools",
+            "items": [
+                "Git & GitHub",
+                "VS Code"
+            ]
+        }
+    ],
+    "journey": [
+        {
+            "year": "2022",
+            "title": "JHS | Started Learning Programming",
+            "description": "My programming journey began with Visual Basic, where I learned the fundamentals of coding, logical thinking, and problem solving."
+        },
+        {
+            "year": "2024",
+            "title": "College | Started Computer Science",
+            "description": "Began pursuing a Bachelor of Science in Computer Science while exploring algorithms, object-oriented programming, and software development."
+        },
+        {
+            "year": "2025",
+            "title": "Built Java Applications",
+            "description": "Developed networking applications, quiz systems, shopping systems, and data structure projects using Java."
+        },
+        {
+            "year": "2026",
+            "title": "Exploring Frontend Development",
+            "description": "Focusing on responsive web development, UI/UX design, and creating modern portfolio websites."
+        }
+    ],
+    "projects": [
+        {
+            "number": "01",
+            "image": "assets/hangman.png",
+            "title": "Hangman Game",
+            "description": "A terminal-based Hangman game featuring randomized word selection, interactive gameplay, and a responsive design that provides an engaging and enjoyable user experience.",
+            "technologies": [
+                "Java",
+                "Terminal-Based",
+                "Computer Programming"
+            ],
+            "link": "https://github.com/hannaloren/COMPRO2/blob/main/Hangman.java"
+        },
+        {
+            "number": "02",
+            "image": "assets/quizify.png",
+            "title": "Java Quiz System",
+            "description": "A client-server quiz application developed using Java sockets, supporting multiple users, score tracking, and JSON file handling.",
+            "technologies": [
+                "Java",
+                "JSON",
+                "Sockets"
+            ],
+            "link": "https://github.com/hannaloren/COMPRO2/tree/main/finals/demo"
+        },
+        {
+            "number": "03",
+            "image": "assets/shopping.png",
+            "title": "Shopping Management System",
+            "description": "A Java desktop application featuring product management, sorting, searching, and file handling using different data structures.",
+            "technologies": [
+                "Java",
+                "Data Structures",
+                "File Handling"
+            ],
+            "link": "https://github.com/hannaloren/DATASTRUC/tree/main/FINALS/FINALPROJECTDS"
+        },
+         {
+            "number": "04",
+            "image": "assets/himaya.png",
+            "title": "Himaya Cosmetics",
+            "description": "A marketing & commercial website that sells cosmetics",
+            "technologies": [
+                "Figma",
+                "User Interface",
+                "User Experience"
+            ],
+            "link": "https://www.figma.com/proto/HZ6XFuTHZIxcdhHflSE7B5/Himaya-Cosmetics?node-id=0-1&p=f&t=gNX5C2NsMvM3XyBq-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=202%3A4020&show-proto-sidebar=1&fuid=1646021531256035455"
+        }
+    ],
+    "statistics": [
+        {
+            "number": "10+",
+            "label": "Academic Projects"
+        },
+        {
+            "number": "2",
+            "label": "Programming Languages (& more to learn)"
+        },
+        {
+            "number": "∞",
+            "label": "Curiosity to Learn"
+        },
+        {
+            "number": "100%",
+            "label": "Dedication"
+        }
+    ],
+    "beyond": [
+        {
+            "title": "📚 Reading",
+            "description": "Discovering new ideas, stories, and perspectives that shape my creativity."
+        },
+        {
+            "title": "🎨 Art & Museums",
+            "description": "Appreciating thoughtful design, architecture, and visual storytelling."
+        },
+        {
+            "title": "🎵 Music",
+            "description": "Finding inspiration through meaningful lyrics and beautiful compositions."
+        },
+        {
+            "title": "🧶 Crocheting",
+            "description": "A hobby that reminds me that patience creates beautiful results."
+        },
+        {
+            "title": "🌿 Nature",
+            "description": "Walking outdoors helps me recharge, reflect, and think creatively."
+        },
+        {
+            "title": "☕ Slow Living",
+            "description": "Enjoying cafés, journaling, and quiet moments that encourage mindfulness."
+        }
+    ]
+}
